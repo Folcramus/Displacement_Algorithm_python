@@ -21,7 +21,8 @@ def midpoint_displacement(start, end, roughness, vertical_displacement=None):
         vertical_displacement = (start[1] + end[1]) / 2
 
     midpoint = (
-    (start[0] + end[0]) / 2, (start[1] + end[1]) / 2 + random.uniform(-vertical_displacement, vertical_displacement))
+        (start[0] + end[0]) / 2,
+        (start[1] + end[1]) / 2 + random.uniform(-vertical_displacement, vertical_displacement))
     if (end[0] - start[0]) > 2:
         midpoint_displacement(start, midpoint, roughness, vertical_displacement * roughness)
         midpoint_displacement(midpoint, end, roughness, vertical_displacement * roughness)
@@ -31,8 +32,8 @@ def midpoint_displacement(start, end, roughness, vertical_displacement=None):
 
 
 # Параметры алгоритма
-roughness = 0.5
-max_displacement = 180
+roughness = 0.5  #зернистость
+max_displacement = 180  #вертикальное смещение
 screen.fill(BLACK)
 start_point = (0, screen_height // 2)
 end_point = (screen_width, screen_height // 2)
